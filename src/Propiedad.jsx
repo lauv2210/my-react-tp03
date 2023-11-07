@@ -14,7 +14,7 @@ function Propiedad() {
 
     propiedades.forEach((elemento) => {
       if (elemento.tipo == event.target.value) {
-        sessionStorage.setItem("id", JSON.stringify(elemento.id));
+        sessionStorage.setItem("id", JSON.stringify(elemento.id));//este no utilizo despues (es de prueba)
         sessionStorage.setItem("factor", JSON.stringify(elemento.factor));
       }
     });

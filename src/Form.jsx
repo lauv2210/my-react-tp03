@@ -42,7 +42,7 @@ function Form() {
           CALCULAR
         </button>
       </form>
-      <p>{resul}:</p>
+      <p>RESULTADO = {resul}</p>
     </>
   );
 }
