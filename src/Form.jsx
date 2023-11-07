@@ -4,13 +4,19 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 function Form() {
-  const [clave, setClave] = useState(0);
   const [resul, setResul] = useState(0);
-  let id = 0;
+
+  let id;
+
+  if (sessionStorage.getItem("ultimaClave") != null) {
+    id = sessionStorage.getItem("ultimaClave");
+  } else {
+    id = 0;
+  }
 
   const handleClick = () => {
-    id = clave + 1;
-    setClave(id);
+    id = parseInt(id) + 1;
+
     const valor1 = JSON.parse(sessionStorage.getItem("propiedad"));
     const valor2 = JSON.parse(sessionStorage.getItem("superficie"));
     const valor3 = JSON.parse(sessionStorage.getItem("factor"));
@@ -28,7 +34,8 @@ function Form() {
 
     setResul(resul);
 
-    localStorage.setItem(["objeto" + clave], JSON.stringify(localObj));
+    localStorage.setItem(["objeto" + id], JSON.stringify(localObj));
+    sessionStorage.setItem("ultimaClave", JSON.stringify(id));
   };
 
   return (
