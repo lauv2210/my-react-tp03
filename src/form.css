@@ -1,0 +1,32 @@
+form {
+  background-color: #e086d3;
+  padding: 2em;
+  margin-top: 2em;
+}
+
+button {
+  font-size: 1em;
+  margin-top: 2em;
+}
+
+select {
+  margin-bottom: 2em;
+  width: 33%;
+  font-size: 1em;
+}
+
+input {
+  box-sizing: border-box;
+  width: 33%;
+  font-size: 1em;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+button:hover {
+  color: white;
+  background-color: black;
+}

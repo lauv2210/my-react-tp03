@@ -2,6 +2,8 @@ import Propiedad from "./Propiedad";
 import Superficie from "./Superficie";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import "./index.css";
+import "./form.css";
 
 function Form() {
   const [resul, setResul] = useState(0);
@@ -44,13 +46,15 @@ function Form() {
   return (
     <>
       <h1>Cotizador de Seguros de Hogar</h1>
-      <Link to="/historial">Ver Historial</Link>
+      <Link to="/historial" className="estiloLink">Ver Historial</Link>
       <form>
+        <div id="divForm">
         <Propiedad />
         <Superficie />
         <button type="button" onClick={handleClick}>
           CALCULAR
         </button>
+        </div>
       </form>
       <p>RESULTADO = {resul}</p>
     </>

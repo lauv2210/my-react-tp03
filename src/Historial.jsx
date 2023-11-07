@@ -34,7 +34,7 @@ function Historial() {
           ))}
         </tbody>
       </table>
-      <Link to="/"> VOLVER</Link>
+      <Link to="/" className="estiloLink"> VOLVER</Link>
     </>
   );
 }

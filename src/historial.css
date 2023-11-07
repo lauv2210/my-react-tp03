@@ -2,15 +2,18 @@ table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
+  margin-bottom: 2em;
+  background-color: yellow;
 }
 
 td,
 th {
-  border: 1px solid #dddddd;
+  border: 1px solid black;
   text-align: left;
   padding: 8px;
+
 }
 
-tr:nth-child(even) {
-  background-color: #dddddd;
+td {
+  background-color: pink;
 }

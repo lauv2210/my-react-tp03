@@ -1,0 +1,25 @@
+body {
+  background-color: #8332ac;
+  padding: 2em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  color: #f2d1c9;
+  text-align: center;
+}
+
+.estiloLink {
+  color: #bad1cd;
+  font-size: 32px;
+}
+
+.estiloLink:hover {
+  color: red;
+}
+
+p {
+  color: white;
+  font-weight: bold;
+  font-size: 1.5em;
+}
