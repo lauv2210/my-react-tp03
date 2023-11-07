@@ -23,10 +23,13 @@ function Form() {
 
     const resul = valor2 * valor3;
 
-    let date = new Date().toJSON();
+    let date = new Date();
+    let dateArgentina = date.toLocaleString("es-AR", {
+      timeZone: "America/Argentina/Buenos_Aires",
+    });
 
     const localObj = {
-      fecha: date,
+      fecha: dateArgentina,
       propiedad: valor1,
       superficie: valor2,
       resultado: resul,
