@@ -10,9 +10,14 @@ function Propiedad() {
   }, []);
 
   const handleChange = (event) => {
-    sessionStorage.setItem("id", JSON.stringify(event.target.id));
     sessionStorage.setItem("propiedad", JSON.stringify(event.target.value));
-    sessionStorage.setItem("factor", JSON.stringify(event.factor));
+
+    propiedades.forEach((elemento) => {
+      if (elemento.tipo == event.target.value) {
+        sessionStorage.setItem("id", JSON.stringify(elemento.id));
+        sessionStorage.setItem("factor", JSON.stringify(elemento.factor));
+      }
+    });
   };
 
   return (
@@ -20,8 +25,8 @@ function Propiedad() {
       <div>
         <label htmlFor="propiedad">Tipo de Propiedad: </label>
         <select onChange={handleChange} name="propiedad" id="propiedad">
-          {propiedades.map((propiedad) => (
-            <option value={propiedad.tipo}>{propiedad.tipo}</option>
+          {propiedades.map((elemento) => (
+            <option value={elemento.tipo}>{elemento.tipo}</option>
           ))}
         </select>
       </div>

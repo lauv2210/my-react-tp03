@@ -1,29 +1,34 @@
 import Propiedad from "./Propiedad";
 import Superficie from "./Superficie";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 function Form() {
-  const handleClick = () => {
-    const id = sessionStorage.getItem("id");
-    const num1 = sessionStorage.getItem("superficie");
-    const num2 = sessionStorage.getItem("factor");
+  const [clave, setClave] = useState(0);
+  const [resul, setResul] = useState(0);
+  let id = 0;
 
-    const obj1 = sessionStorage.getItem("propiedad");
-    const obj2 = num1;
-    const obj3 = num1 * num2;
+  const handleClick = () => {
+    id = clave + 1;
+    setClave(id);
+    const valor1 = JSON.parse(sessionStorage.getItem("propiedad"));
+    const valor2 = JSON.parse(sessionStorage.getItem("superficie"));
+    const valor3 = JSON.parse(sessionStorage.getItem("factor"));
+
+    const resul = valor2 * valor3;
 
     let date = new Date().toJSON();
 
     const localObj = {
       fecha: date,
-      propiedad: obj1,
-      superficie: num1,
-      resultado: obj3,
+      propiedad: valor1,
+      superficie: valor2,
+      resultado: resul,
     };
 
-    localStorage.setItem(id, JSON.stringify(localObj));
+    setResul(resul);
 
-    return <p>obj3</p>;
+    localStorage.setItem(["objeto" + clave], JSON.stringify(localObj));
   };
 
   return (
@@ -37,6 +42,7 @@ function Form() {
           CALCULAR
         </button>
       </form>
+      <p>{resul}:</p>
     </>
   );
 }
