@@ -7,6 +7,8 @@ function Propiedad() {
     fetch("https://653831aaa543859d1bb14d53.mockapi.io/propiedades")
       .then((res) => res.json())
       .then((datos) => setPropiedades(datos));
+    sessionStorage.setItem("propiedad", JSON.stringify("Casa"));
+    sessionStorage.setItem("factor", JSON.stringify("1.09"));
   }, []);
 
   const handleChange = (event) => {
@@ -14,7 +16,7 @@ function Propiedad() {
 
     propiedades.forEach((elemento) => {
       if (elemento.tipo == event.target.value) {
-        sessionStorage.setItem("id", JSON.stringify(elemento.id));//este no utilizo despues (es de prueba)
+        sessionStorage.setItem("id", JSON.stringify(elemento.id)); //este no utilizo despues (es de prueba)
         sessionStorage.setItem("factor", JSON.stringify(elemento.factor));
       }
     });
