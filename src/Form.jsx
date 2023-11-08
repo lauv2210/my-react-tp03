@@ -16,7 +16,9 @@ function Form() {
     id = 0;
   }
 
-  const handleClick = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
     id = parseInt(id) + 1;
 
     const valor1 = JSON.parse(sessionStorage.getItem("propiedad"));
@@ -47,11 +49,11 @@ function Form() {
     <>
       <h1>Cotizador de Seguros de Hogar</h1>
       <Link to="/historial" className="estiloLink">Ver Historial</Link>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div id="divForm">
         <Propiedad />
         <Superficie />
-        <button type="button" onClick={handleClick}>
+        <button type="submit">
           CALCULAR
         </button>
         </div>

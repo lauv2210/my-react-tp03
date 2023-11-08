@@ -12,6 +12,7 @@ function Superficie() {
           name="superficie"
           id="superficie"
           onChange={handleChange}
+          required
         />
       </div>
     </>
