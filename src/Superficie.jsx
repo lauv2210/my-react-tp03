@@ -1,6 +1,11 @@
 function Superficie() {
   const handleChange = (event) => {
-    sessionStorage.setItem("superficie", JSON.stringify(event.target.value));
+    if (isNaN(event.target.value)) {
+      alert("Ingresa un número sin puntos ni comas.");
+      event.target.value = "";
+    } else {
+      sessionStorage.setItem("superficie", JSON.stringify(event.target.value));
+    }
   };
 
   return (
