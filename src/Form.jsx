@@ -10,8 +10,8 @@ function Form() {
 
   let id;
 
-  if (sessionStorage.getItem("ultimaClave") != null) {
-    id = sessionStorage.getItem("ultimaClave");
+  if (localStorage.getItem("ultimaClave") != null) {
+    id = localStorage.getItem("ultimaClave");
   } else {
     id = 0;
   }
@@ -42,20 +42,20 @@ function Form() {
     setResul(resul);
 
     localStorage.setItem(["objeto" + id], JSON.stringify(localObj));
-    sessionStorage.setItem("ultimaClave", JSON.stringify(id));
+    localStorage.setItem("ultimaClave", JSON.stringify(id));
   };
 
   return (
     <>
       <h1>Cotizador de Seguros de Hogar</h1>
-      <Link to="/historial" className="estiloLink">Ver Historial</Link>
+      <Link to="/historial" className="estiloLink">
+        Ver Historial
+      </Link>
       <form onSubmit={handleSubmit}>
         <div id="divForm">
-        <Propiedad />
-        <Superficie />
-        <button type="submit">
-          CALCULAR
-        </button>
+          <Propiedad />
+          <Superficie />
+          <button type="submit">CALCULAR</button>
         </div>
       </form>
       <p>RESULTADO = {resul}</p>

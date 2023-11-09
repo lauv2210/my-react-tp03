@@ -4,12 +4,15 @@ import { Link } from "react-router-dom";
 function Historial() {
   const objetosAlmacenados = [];
   const claves = Object.keys(localStorage);
+  let valor;
+  let objeto;
 
   claves.forEach((clave) => {
-    const valor = localStorage.getItem(clave);
-
-    const objeto = JSON.parse(valor);
-    objetosAlmacenados.push(objeto);
+    if (clave != "ultimaClave") {
+      valor = localStorage.getItem(clave);
+      objeto = JSON.parse(valor);
+      objetosAlmacenados.push(objeto);
+    }
   });
 
   return (
@@ -34,7 +37,10 @@ function Historial() {
           ))}
         </tbody>
       </table>
-      <Link to="/" className="estiloLink"> VOLVER</Link>
+      <Link to="/" className="estiloLink">
+        {" "}
+        VOLVER
+      </Link>
     </>
   );
 }
