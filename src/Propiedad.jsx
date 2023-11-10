@@ -4,7 +4,7 @@ function Propiedad() {
   const [propiedades, setPropiedades] = useState([]);
 
   useEffect(() => {
-    fetch("https://653831aaa543859d1bb14d53.mockapi.io/propiedades")
+    fetch("https://654e2885cbc3253557427292.mockapi.io/propiedades")
       .then((res) => res.json())
       .then((datos) => setPropiedades(datos));
     sessionStorage.setItem("propiedad", JSON.stringify("Casa"));
