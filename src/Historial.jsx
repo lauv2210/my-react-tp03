@@ -22,6 +22,7 @@ function Historial() {
           <tr>
             <th>Fecha de Cotización</th>
             <th>Propiedad</th>
+            <th>Barrio</th>
             <th>Superficie</th>
             <th>Póliza Mensual</th>
           </tr>
@@ -31,6 +32,7 @@ function Historial() {
             <tr>
               <td>{objeto.fecha}</td>
               <td>{objeto.propiedad}</td>
+              <td>{objeto.barrio}</td>
               <td>{objeto.superficie}</td>
               <td>{objeto.resultado}</td>
             </tr>

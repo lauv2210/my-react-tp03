@@ -1,5 +1,6 @@
 import Propiedad from "./Propiedad";
 import Superficie from "./Superficie";
+import Ubicacion from "./Ubicacion";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import "./index.css";
@@ -24,8 +25,10 @@ function Form() {
     const valor1 = JSON.parse(sessionStorage.getItem("propiedad"));
     const valor2 = JSON.parse(sessionStorage.getItem("superficie"));
     const valor3 = JSON.parse(sessionStorage.getItem("factor"));
+    const valor4 = JSON.parse(sessionStorage.getItem("barrio"));
+    const valor5 = JSON.parse(sessionStorage.getItem("factor2"));
 
-    const resul = valor2 * valor3;
+    const resul = valor2 * valor3 + valor5;
 
     let date = new Date();
     let dateArgentina = date.toLocaleString("es-AR", {
@@ -35,6 +38,7 @@ function Form() {
     const localObj = {
       fecha: dateArgentina,
       propiedad: valor1,
+      barrio: valor4,
       superficie: valor2,
       resultado: resul,
     };
@@ -54,6 +58,7 @@ function Form() {
       <form onSubmit={handleSubmit}>
         <div id="divForm">
           <Propiedad />
+          <Ubicacion />
           <Superficie />
           <button type="submit">CALCULAR</button>
         </div>
